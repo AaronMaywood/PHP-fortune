@@ -1,6 +1,12 @@
 <?php
-$results = ['大吉', '小吉', '凶'];
-$fortune = $results[array_rand($results)];
+$results = [
+    '大吉' => 'images/daikichi.png',
+    '中吉' => 'images/chuukiti.png',
+    '凶' => 'images/kyou.png'
+];
+$keys = array_keys($results);
+$fortune = $keys[array_rand($keys)];
+$image = $results[$fortune];
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -13,6 +19,7 @@ $fortune = $results[array_rand($results)];
     <p style="font-size:2em; color: #e67e22;">
         <?php echo $fortune; ?>
     </p>
+    <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo $fortune; ?>" style="width:200px; height:auto;">
     <form method="post">
         <button type="submit">もう一度占う</button>
     </form>
