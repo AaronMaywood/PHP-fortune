@@ -16,7 +16,7 @@ $image = $results[$fortune];
 </head>
 <body>
     <h1>今日の運勢は…</h1>
-    <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo $fortune; ?>" style="width:200px; height:auto;">
+    <img src="<?php echo $image; ?>" alt="<?php echo $fortune; ?>" style="width:200px; height:auto;">
     <form method="post">
         <button type="submit">もう一度占う</button>
     </form>
